@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://walab.handong.edu:3306/p232_22200750
+    username: p232_22200750
+    password: EWieJ7
+    driver-class-name: org.mariadb.jdbc.Driver
+
+    jpa:
+      defer-datasource-initialization: true
+      hibernate.ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate.format_sql: true
+        hibernate.default_batch_fetch_size: 100
+        hibernate.jdbc.time_zone: Asia/Seoul
