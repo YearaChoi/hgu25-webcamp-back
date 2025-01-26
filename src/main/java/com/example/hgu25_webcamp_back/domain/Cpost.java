@@ -27,17 +27,25 @@ public class Cpost {
     private String title;
 
     @Setter
+    @Column(nullable = false)
+    private String price;
+
+    @Setter
     @Column(nullable = false, length = 2000000)
     @Lob
     private String description;
 
     @Setter
-    @Column(nullable = false)
+    @Column
     private String category;
 
     @Setter
     @Column(nullable = false)
     private String imageName;
+
+    @Setter
+    @Column(nullable = false)
+    private String imagePath;
 
     @CreatedDate
     private LocalDateTime createdDate;
@@ -49,16 +57,18 @@ public class Cpost {
     // 기본 생성자는 외부에서 직접 호출되지 않으며 JPA가 엔티티를 생성할 때 사용
     protected Cpost() {}
 
-    private Cpost(String title, String description, String category, String imageName) {
+    private Cpost(String title, String price, String description, String category, String imageName, String imagePath) {
         this.title = title;
+        this.price = price;
         this.description = description;
         this.category = category;
         this.imageName = imageName;
+        this.imagePath = imagePath;
     }
 
     // 정적 팩토리 메서드: cpost 객체를 생성하는 방법
-    public static Cpost of(String title, String description, String category, String imageName) {
-        return new Cpost(title, description, category, imageName);
+    public static Cpost of(String title, String price, String description, String category, String imageName, String imagePath) {
+        return new Cpost(title, price, description, category, imageName, imagePath);
     }
 
     // 엔티티가 영속성 컨텍스트에 저장되기 전에 실행되는 메서드

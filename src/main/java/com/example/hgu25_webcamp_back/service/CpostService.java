@@ -1,6 +1,7 @@
 package com.example.hgu25_webcamp_back.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -9,8 +10,8 @@ import java.util.Map;
 @Service
 // 게시물 관련 비즈니스 로직을 처리하는 메서드 정의
 public interface CpostService {
-    public Map<String, Object> create(Map<String, Object> param);
-    public Map<String, Object> update(Map<String, Object> param);
+    public Map<String, Object> create(Map<String, Object> param, MultipartFile file);
+    public Map<String, Object> update(Map<String, Object> param, MultipartFile file);
     public Map<String, Object> get(String id);
     public Map<String, Object> delete(String id);
     public List<Map<String, Object>> getAll();
