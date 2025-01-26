@@ -21,6 +21,7 @@ public class CpostController {
     }
 
 @PostMapping("")
+@CrossOrigin(origins = "http://localhost:3000/")
 public Map<String, Object> create(
         // request part는 무조건 param, file이 수신되어야 함, 아닌 경우 400에러 발생
         @RequestPart("param") String paramJson,  // JSON 문자열 수신
@@ -44,6 +45,7 @@ public Map<String, Object> create(
 
     // PUT 요청을 처리하는 메서드
     @PutMapping("")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public Map<String, Object> update(
             @RequestPart("param") String paramJson,  // JSON 데이터 받기
             @RequestPart(value = "file", required = false) MultipartFile file  // 파일 받기 (없을 수도 있음)
@@ -64,6 +66,7 @@ public Map<String, Object> create(
 
     // DELETE 요청을 처리하는 메서드, 해당 id 게시글 삭제
     @DeleteMapping("/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public Map<String, Object> delete(@PathVariable("id") String id) {
         System.out.println(id);
         // 서비스의 delete 메서드를 호출하여 결과를 반환
@@ -72,6 +75,7 @@ public Map<String, Object> create(
 
     // GET 요청을 처리하는 메서드, 해당 id 게시글 불러오기
     @GetMapping("/get/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public Map<String, Object> detail(@PathVariable("id") String id) {
         System.out.println(id);
         // 서비스의 get 메서드를 호출하여 결과를 반환
@@ -80,6 +84,7 @@ public Map<String, Object> create(
 
     // GET 요청을 처리하는 메서드로, 특정 카테고리의 모든 게시물을 가져옴
     @GetMapping("/category/{category}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public List<Map<String, Object>> board(@PathVariable("category") String category) {
         System.out.println(category);
         // 서비스의 categoryGetAll 메서드를 호출하여 결과를 반환
@@ -88,6 +93,7 @@ public Map<String, Object> create(
 
     // GET 요청을 처리하는 메서드로, 모든 게시물을 가져옴
     @GetMapping("/getAll")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public List<Map<String, Object>> getAll() {
         // 서비스의 getAll 메서드를 호출하여 결과를 반환
         return cpostService.getAll();
