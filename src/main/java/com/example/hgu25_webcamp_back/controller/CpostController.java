@@ -11,6 +11,7 @@ import java.util.Map;
 // RequestMapping: 컨트롤러가 처리할 기본 URL을 "/api/cpost"로 설정
 @RequestMapping("/api/cpost")
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/")
 public class CpostController {
     // CpostService를 주입받아 사용하기 위해 선언
     private final CpostService cpostService;
