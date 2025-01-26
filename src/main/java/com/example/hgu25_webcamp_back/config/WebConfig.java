@@ -11,6 +11,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // static/files 경로에 대한 매핑 설정
         registry.addResourceHandler("/api/cpost/files/**")
-                .addResourceLocations("classpath:/static/files/");
+                .addResourceLocations("file:" + System.getProperty("user.dir") + "/src/main/resources/static/files");
     }
 }
