@@ -42,6 +42,7 @@ public class CpostServiceImpl implements CpostService {
             // 전달받은 데이터를 기반으로 cpost 객체 생성
             Cpost cpost = Cpost.of(
                     param.get("title") + "",
+                    param.get("price") + "",
                     param.get("description") + "",
                     param.get("category") + "",
                     imageName,
@@ -101,6 +102,11 @@ public class CpostServiceImpl implements CpostService {
         if (param.get("title") != null) {
             cpost.setTitle(param.get("title") + "");
         }
+
+        if (param.get("price") != null) {
+            cpost.setPrice(param.get("price") + "");
+        }
+
         if (param.get("description") != null) {
             cpost.setDescription(param.get("description") + "");
         }
@@ -172,6 +178,7 @@ public class CpostServiceImpl implements CpostService {
         // 조회된 게시물의 정보 반환
         returnMap.put("id", cpost.getId());
         returnMap.put("title", cpost.getTitle());
+        returnMap.put("price", cpost.getPrice());
         returnMap.put("description", cpost.getDescription());
         returnMap.put("category", cpost.getCategory());
         returnMap.put("imageName", cpost.getImageName());
@@ -193,6 +200,7 @@ public class CpostServiceImpl implements CpostService {
 
             returnMap.put("id", cpost.getId());
             returnMap.put("title", cpost.getTitle());
+            returnMap.put("price", cpost.getPrice());
             returnMap.put("description", cpost.getDescription());
             returnMap.put("category", cpost.getCategory());
             returnMap.put("imageName", cpost.getImageName());
@@ -216,6 +224,7 @@ public class CpostServiceImpl implements CpostService {
 
             returnMap.put("id", cpost.getId());
             returnMap.put("title", cpost.getTitle());
+            returnMap.put("price", cpost.getPrice());
             returnMap.put("description", cpost.getDescription());
             returnMap.put("category", cpost.getCategory());
             returnMap.put("imageName", cpost.getImageName());
