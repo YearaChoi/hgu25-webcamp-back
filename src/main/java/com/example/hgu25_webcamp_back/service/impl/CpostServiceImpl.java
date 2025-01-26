@@ -182,6 +182,7 @@ public class CpostServiceImpl implements CpostService {
         returnMap.put("description", cpost.getDescription());
         returnMap.put("category", cpost.getCategory());
         returnMap.put("imageName", cpost.getImageName());
+        returnMap.put("imagePath", cpost.getImagePath());
         returnMap.put("createdAt", cpost.getCreatedDate());
         returnMap.put("modifiedAt", cpost.getModifiedDate());
 
@@ -204,6 +205,7 @@ public class CpostServiceImpl implements CpostService {
             returnMap.put("description", cpost.getDescription());
             returnMap.put("category", cpost.getCategory());
             returnMap.put("imageName", cpost.getImageName());
+            returnMap.put("imagePath", cpost.getImagePath());
             returnMap.put("createdAt", cpost.getCreatedDate());
             returnMap.put("modifiedAt", cpost.getModifiedDate());
             result.add(returnMap);
@@ -228,6 +230,7 @@ public class CpostServiceImpl implements CpostService {
             returnMap.put("description", cpost.getDescription());
             returnMap.put("category", cpost.getCategory());
             returnMap.put("imageName", cpost.getImageName());
+            returnMap.put("imagePath", cpost.getImagePath());
             returnMap.put("createdAt", cpost.getCreatedDate());
             returnMap.put("modifiedAt", cpost.getModifiedDate());
             result.add(returnMap);
